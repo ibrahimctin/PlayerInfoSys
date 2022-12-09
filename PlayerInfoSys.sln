@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.Domain.DbEntities", "Domain\PlayerInfoSys.Domain.DbEntities\PlayerInfoSys.Domain.DbEntities.csproj", "{CC70D6B8-9DBE-43F8-80DA-1654B6791C13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.Infrastructure", "Infrastructure\PlayerInfoSys.Infrastructure\PlayerInfoSys.Infrastructure.csproj", "{93E4CFC2-6988-4568-82C0-24A4F2A06098}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.API", "Presentation\PlayerInfoSys.API\PlayerInfoSys.API.csproj", "{DC7558DB-2B7F-4AC9-9CC3-9540DCF16DF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.Domain.DTOs", "Domain\PlayerInfoSys.Domain.DTOs\PlayerInfoSys.Domain.DTOs.csproj", "{F8078F84-3D36-4728-967B-61035ACD8DAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.Domain.Application", "Domain\PlayerInfoSys.Domain.Application\PlayerInfoSys.Domain.Application.csproj", "{EE310B2C-D057-424B-BA57-74211C8C5BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerInfoSys.Domain.Common", "Domain\PlayerInfoSys.Domain.Common\PlayerInfoSys.Domain.Common.csproj", "{726020A4-9603-46E9-95C6-380081FF38FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC70D6B8-9DBE-43F8-80DA-1654B6791C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC70D6B8-9DBE-43F8-80DA-1654B6791C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC70D6B8-9DBE-43F8-80DA-1654B6791C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC70D6B8-9DBE-43F8-80DA-1654B6791C13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E4CFC2-6988-4568-82C0-24A4F2A06098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E4CFC2-6988-4568-82C0-24A4F2A06098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E4CFC2-6988-4568-82C0-24A4F2A06098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E4CFC2-6988-4568-82C0-24A4F2A06098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7558DB-2B7F-4AC9-9CC3-9540DCF16DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7558DB-2B7F-4AC9-9CC3-9540DCF16DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7558DB-2B7F-4AC9-9CC3-9540DCF16DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7558DB-2B7F-4AC9-9CC3-9540DCF16DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8078F84-3D36-4728-967B-61035ACD8DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8078F84-3D36-4728-967B-61035ACD8DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8078F84-3D36-4728-967B-61035ACD8DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8078F84-3D36-4728-967B-61035ACD8DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE310B2C-D057-424B-BA57-74211C8C5BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE310B2C-D057-424B-BA57-74211C8C5BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE310B2C-D057-424B-BA57-74211C8C5BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE310B2C-D057-424B-BA57-74211C8C5BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726020A4-9603-46E9-95C6-380081FF38FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726020A4-9603-46E9-95C6-380081FF38FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726020A4-9603-46E9-95C6-380081FF38FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726020A4-9603-46E9-95C6-380081FF38FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {490CE219-40E1-4B2A-A9BC-16DE5F3FECDF}
+	EndGlobalSection
+EndGlobal
