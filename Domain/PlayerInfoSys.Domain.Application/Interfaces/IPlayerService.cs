@@ -10,7 +10,7 @@ namespace PlayerInfoSys.Domain.Application.Interfaces
         Task<bool> CreatePlayer(CreatePlayerRequest request);
         Task<IResult> GetAll(PaginationQuery query);
         Task<PlayerDetailResponse> GetPlayerById(string id);
-
+        Task<bool> UpdatePlayer(string id);
         Task<bool> DeletePlayer(string id);
 
     }

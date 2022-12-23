@@ -16,6 +16,7 @@ namespace PlayerInfoSys.Domain.Common.AutoMapper.AutoMapperProfiles
             CreateMap<ClubDetailResponse, Club>().ReverseMap();
 
             CreateMap<CreatePlayerRequest, Player>().ReverseMap();
+            CreateMap<UpdatePlayerRequest, Player>().ReverseMap();
             CreateMap<PlayerDetailResponse,Player>().ReverseMap();
             
           

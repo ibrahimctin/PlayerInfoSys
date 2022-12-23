@@ -85,11 +85,28 @@ namespace PlayerInfoSys.Domain.Application.Implementation
             {
 
                 await _uOw.Player.DeleteAsync(playerPayload);
+                await _uOw.SaveAsync();
             }
 
             return playerPayload is null ? false : true;
 
 
+        }
+
+
+        public async Task<bool> UpdatePlayer(string id)
+        {
+            var playerFromDb = await GetPlayerDetail(id);
+
+            var playerPayload = _mapper.Map<Player>(playerFromDb);
+            if (playerFromDb is not null)
+            {
+
+                await  _uOw.Player.UpdateAsync(playerPayload);
+                await  _uOw.SaveAsync();
+            }
+
+            return playerPayload is null ? false : true;
         }
         #endregion
 
@@ -101,7 +118,9 @@ namespace PlayerInfoSys.Domain.Application.Implementation
         private async Task<Club> GetTeamDeatail(string teamId) => await _uOw.Club.GetWhere(x=>x.Id==teamId);
         private async Task<Player> GetPlayerDetail(string id) => await _uOw.Player.GetWhere(x => x.Id == id);
 
-        
+     
+
+
         #endregion
     }
 }

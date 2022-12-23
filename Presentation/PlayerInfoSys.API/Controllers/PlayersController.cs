@@ -44,5 +44,11 @@ namespace PlayerInfoSys.API.Controllers
             var player = await _playerService.DeletePlayer(id);
             return Ok(player);
         }
+        [HttpPost("PlayerUpdate")]
+        public async Task<IActionResult> UpdatePlayer(UpdatePlayerRequest request)
+        {
+            var player = await _playerService.UpdatePlayer(request.Id);
+            return Ok(player);
+        }
     }
 }
