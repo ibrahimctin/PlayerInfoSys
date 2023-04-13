@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace PlayerInfoSys.Domain.Common.Extensions
+﻿namespace PlayerInfoSys.Domain.Common.Extensions
 {
     public static class HttpContextAccessorExtensions
     {

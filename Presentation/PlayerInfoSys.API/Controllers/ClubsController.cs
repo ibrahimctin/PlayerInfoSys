@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PlayerInfoSys.Domain.Application.Interfaces;
-using PlayerInfoSys.Domain.Common.Results.Paginations.PagingQueries;
-using PlayerInfoSys.Domain.Common.Results.Paginations;
-using PlayerInfoSys.Domain.DTOs.Requests.Club;
-using System.Net;
+﻿using PlayerInfoSys.Domain.Application.Features.Clubs.Queries.GetClubDetails;
+using PlayerInfoSys.Domain.DTOs.Clubs.ResponseClubDtos;
 
 namespace PlayerInfoSys.API.Controllers
 {
@@ -12,26 +7,53 @@ namespace PlayerInfoSys.API.Controllers
     [ApiController]
     public class ClubsController : ControllerBase
     {
-        private readonly IClubService _clubService;
+        private readonly IMediator _mediator;
 
-        public ClubsController(IClubService clubService)
+        public ClubsController(IMediator mediator)
         {
-            _clubService = clubService;
+            _mediator = mediator;
         }
 
-        [HttpPost("CreateClub")]
-        public async Task<IActionResult> CreateClub(CreateClubRequest request)
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> Post(ClubCreateCommand request)
         {
-            var club = await _clubService.CreateClubAsync(request);
-            return Ok(club);
+            var response = await _mediator.Send(request);
+            return CreatedAtAction(nameof(Post), new { id = response });
         }
-        [HttpGet("GetClubById")]
-        public async Task<IActionResult>GetClubById(string id)
+
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> Put(ClubUpdateCommand request)
         {
-            var club = await _clubService.GetClubById(id);
-            return club is null ? Ok(null) : Ok(club);
+            await _mediator.Send(request);
+            return NoContent();
         }
-        
-        
+
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> Delete(string id)
+        {
+            var command = new ClubDeleteCommand(id);
+            await _mediator.Send(command);
+            return NoContent();
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ClubDetailResponse>> Get(string id)
+        {
+            var leaveRequest = await _mediator.Send(new GetClubDetailsQuery(id));
+            return Ok(leaveRequest);
+        }
     }
 }

@@ -1,9 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using PlayerInfoSys.Domain.Application.Implementation;
-using PlayerInfoSys.Domain.Application.Interfaces;
-
-namespace PlayerInfoSys.Domain.Application.Extensions
+﻿namespace PlayerInfoSys.Domain.Application.Extensions
 {
     public static class ApplicationLayerExtensions
     {
@@ -11,8 +6,13 @@ namespace PlayerInfoSys.Domain.Application.Extensions
         {
             services.AddScoped<IPlayerService, PlayerService>();
             services.AddScoped<IClubService, ClubService>();
-           
-
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+                typeof(ValidationBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>),
+                typeof(LoggingBehavior<,>));
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
         }
     }

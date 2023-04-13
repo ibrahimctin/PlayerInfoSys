@@ -1,0 +1,14 @@
+﻿global using MediatR;
+global using AutoMapper;
+global using PlayerInfoSys.Domain.DbEntities.Entities;
+global using FluentValidation;
+global using Microsoft.Extensions.Logging;
+global using PlayerInfoSys.Domain.Common.Abstraction.Messaging;
+global using Microsoft.AspNetCore.Http;
+global using PlayerInfoSys.Domain.Common.Results.Paginations.PagingQueries;
+global using PlayerInfoSys.Domain.Common.UriService;
+global using System.Net;
+global using PlayerInfoSys.Domain.DTOs.Clubs.RequestClubDtos;
+global using PlayerInfoSys.Domain.DTOs.Clubs.ResponseClubDtos;
+global using PlayerInfoSys.Domain.DTOs.Players.RequestPlayerDtos;
+global using PlayerInfoSys.Domain.DTOs.Players.ResponsePlayerDtos;

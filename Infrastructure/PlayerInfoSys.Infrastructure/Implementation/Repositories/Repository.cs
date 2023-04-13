@@ -1,13 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
-using PlayerInfoSys.Domain.Common.Results.Paginations.PagingQueries;
-using PlayerInfoSys.Domain.DbEntities.Base;
-using PlayerInfoSys.Infrastructure.Context;
-using PlayerInfoSys.Infrastructure.Interfaces.Repositories;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-
-namespace PlayerInfoSys.Infrastructure.Implementation.Repositories
+﻿namespace PlayerInfoSys.Infrastructure.Implementation.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {

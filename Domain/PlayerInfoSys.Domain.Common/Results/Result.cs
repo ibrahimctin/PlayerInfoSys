@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace PlayerInfoSys.Domain.Common.Results
+﻿namespace PlayerInfoSys.Domain.Common.Results
 {
     public class Result : IResult
     {

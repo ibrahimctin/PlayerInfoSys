@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PlayerInfoSys.Domain.DbEntities.Entities;
-using System.Reflection;
-
-namespace PlayerInfoSys.Infrastructure.Context
+﻿namespace PlayerInfoSys.Infrastructure.Context
 {
     public class AppDbContext:DbContext
     {

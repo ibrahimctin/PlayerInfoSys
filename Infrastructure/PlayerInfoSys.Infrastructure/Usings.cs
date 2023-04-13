@@ -1,0 +1,11 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using PlayerInfoSys.Domain.DbEntities.Entities;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using PlayerInfoSys.Infrastructure.Implementation.Repositories;
+global using PlayerInfoSys.Infrastructure.Interfaces.Repositories;
+global using PlayerInfoSys.Infrastructure.UnitOfWorks;
+global using PlayerInfoSys.Infrastructure.Context;
+global using PlayerInfoSys.Domain.Common.Results.Paginations.PagingQueries;
+global using System.Linq.Expressions;
+global using Microsoft.EntityFrameworkCore.Query;

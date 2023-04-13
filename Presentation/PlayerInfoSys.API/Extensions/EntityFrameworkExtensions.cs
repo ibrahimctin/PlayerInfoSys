@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PlayerInfoSys.Infrastructure.Context;
-
-namespace PlayerInfoSys.API.Extensions
+﻿namespace PlayerInfoSys.API.Extensions
 {
     public static class EntityFrameworkExtensions
     {

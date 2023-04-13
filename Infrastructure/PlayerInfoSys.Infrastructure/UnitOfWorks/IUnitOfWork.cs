@@ -1,6 +1,4 @@
-﻿using PlayerInfoSys.Infrastructure.Interfaces.Repositories;
-
-namespace PlayerInfoSys.Infrastructure.UnitOfWorks
+﻿namespace PlayerInfoSys.Infrastructure.UnitOfWorks
 {
     public interface IUnitOfWork
     {

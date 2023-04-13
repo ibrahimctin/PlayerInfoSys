@@ -1,54 +1,56 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PlayerInfoSys.Domain.Application.Interfaces;
-using PlayerInfoSys.Domain.Common.Results.Paginations.PagingQueries;
-using PlayerInfoSys.Domain.DTOs.Requests.Club;
-using PlayerInfoSys.Domain.DTOs.Requests.Player;
-
-namespace PlayerInfoSys.API.Controllers
+﻿namespace PlayerInfoSys.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class PlayersController : ControllerBase
     {
-        private readonly IPlayerService _playerService;
+        private readonly IMediator _mediator;
 
-        public PlayersController(IPlayerService playerService)
+        public PlayersController(IMediator mediator)
         {
-            _playerService = playerService;
+            _mediator = mediator;
         }
-        [HttpPost("PlayerCreate")]
-        public async Task<IActionResult> CreateClub(CreatePlayerRequest request)
-        {
-            var player = await _playerService.CreatePlayer(request);
-            return Ok(player);
-        }
-        [HttpGet("GetAll")]
 
-        public virtual async Task<IActionResult> GetAll([FromQuery] PaginationQuery paginationQuery)
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> Post(PlayerCreateCommand request)
         {
-            var pagination = new PaginationQuery(paginationQuery.PageNumber, paginationQuery.PageSize);
-            var result = await _playerService.GetAll(pagination);
-            return Ok(result);
+            var response = await _mediator.Send(request);
+            return CreatedAtAction(nameof(Post), new { id = response });
         }
-        [HttpGet("GetPlayerById")]
-        public async Task<IActionResult> GetPlayerById(string id)
-        {
-            var player = await _playerService.GetPlayerById(id);
-            return player is not null ? Ok(player) : NotFound();
 
-        }
-        [HttpDelete("DeletePlayer")]
-        public async Task<IActionResult>DeletePlayer(string id)
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> Put(PlayerUpdateCommand request)
         {
-            var player = await _playerService.DeletePlayer(id);
-            return Ok(player);
+            await _mediator.Send(request);
+            return NoContent();
         }
-        [HttpPost("PlayerUpdate")]
-        public async Task<IActionResult> UpdatePlayer(UpdatePlayerRequest request)
+
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> Delete(string id)
         {
-            var player = await _playerService.UpdatePlayer(request.Id);
-            return Ok(player);
+            var command = new PlayerDeleteCommand(id);
+            await _mediator.Send(command);
+            return NoContent();
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<PlayerDetailResponse>> Get(string id)
+        {
+            var leaveRequest = await _mediator.Send(new GetClubDetailsQuery(id));
+            return Ok(leaveRequest);
         }
     }
 }

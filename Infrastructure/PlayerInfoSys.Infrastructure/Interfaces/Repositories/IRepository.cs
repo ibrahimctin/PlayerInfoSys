@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
-using PlayerInfoSys.Domain.Common.Results.Paginations.PagingQueries;
-using System.Linq.Expressions;
-
-namespace PlayerInfoSys.Infrastructure.Interfaces.Repositories
+﻿namespace PlayerInfoSys.Infrastructure.Interfaces.Repositories
 {
     public interface IRepository<T> where T : class
     {

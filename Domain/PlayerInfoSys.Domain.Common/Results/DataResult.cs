@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace PlayerInfoSys.Domain.Common.Results
+﻿namespace PlayerInfoSys.Domain.Common.Results
 {
     public class DataResult<T> : Result, IDataResult<T>
     {
@@ -27,5 +25,7 @@ namespace PlayerInfoSys.Domain.Common.Results
 
         public T Data { get; }
         public int TotalRecords { get; }
+
+        
     }
 }

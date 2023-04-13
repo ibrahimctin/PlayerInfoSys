@@ -1,10 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using PlayerInfoSys.Infrastructure.Implementation.Repositories;
-using PlayerInfoSys.Infrastructure.Interfaces.Repositories;
-using PlayerInfoSys.Infrastructure.UnitOfWorks;
-
-namespace PlayerInfoSys.Infrastructure.Extensions
+﻿namespace PlayerInfoSys.Infrastructure.Extensions
 {
     public static class InfrastructureLayerExtensions
     {

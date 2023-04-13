@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.Domain.DTOs",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.Domain.Application", "Domain\PlayerInfoSys.Domain.Application\PlayerInfoSys.Domain.Application.csproj", "{EE310B2C-D057-424B-BA57-74211C8C5BFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerInfoSys.Domain.Common", "Domain\PlayerInfoSys.Domain.Common\PlayerInfoSys.Domain.Common.csproj", "{726020A4-9603-46E9-95C6-380081FF38FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayerInfoSys.Domain.Common", "Domain\PlayerInfoSys.Domain.Common\PlayerInfoSys.Domain.Common.csproj", "{726020A4-9603-46E9-95C6-380081FF38FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

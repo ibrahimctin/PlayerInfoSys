@@ -1,0 +1,17 @@
+﻿global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using PlayerInfoSys.Infrastructure.Context;
+global using PlayerInfoSys.API.Extensions;
+global using PlayerInfoSys.Domain.Application.Extensions;
+global using PlayerInfoSys.Domain.Common.UriService;
+global using PlayerInfoSys.Infrastructure.Extensions;
+global using MediatR;
+global using PlayerInfoSys.Domain.Application.Features.Clubs.Commands.CreateClub;
+global using PlayerInfoSys.Domain.Application.Features.Clubs.Commands.DeleteClub;
+global using PlayerInfoSys.Domain.Application.Features.Clubs.Commands.UpdateClub;
+global using PlayerInfoSys.Domain.Application.Features.Clubs.Queries.GetClubDetails;
+global using PlayerInfoSys.Domain.Application.Features.Players.Commands.CreatePlayer;
+global using PlayerInfoSys.Domain.Application.Features.Players.Commands.DeletePlayer;
+global using PlayerInfoSys.Domain.Application.Features.Players.Commands.UpdatePlayer;
+global using PlayerInfoSys.Domain.DTOs.Clubs.ResponseClubDtos;
+global using PlayerInfoSys.Domain.DTOs.Players.ResponsePlayerDtos;

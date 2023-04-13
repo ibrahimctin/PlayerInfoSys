@@ -1,8 +1,4 @@
-﻿using PlayerInfoSys.Domain.Common.Results.Paginations.PagingQueries;
-using PlayerInfoSys.Domain.Common.UriService;
-using System.Net;
-
-namespace PlayerInfoSys.Domain.Common.Results.Paginations
+﻿namespace PlayerInfoSys.Domain.Common.Results.Paginations
 {
     public static class PaginationExtensions
     {
